@@ -1,0 +1,131 @@
+<div class="feature-view-tab__content">
+    <div class="row">
+        <!-- #region Coluna 1 -->
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="feature-view__title">Dados cadastrais</span>
+                </div>
+            </div>
+            <div class="row feature-view__group">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Nome</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ product?.name }}" class="feature-view__value">
+                                    {{ product?.name }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Disponibilidade</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ availabilityText }}" class="feature-view__value">
+                                    {{ availabilityText }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="feature-view__title">Informações Financeiras</span>
+                </div>
+            </div>
+            <div class="row feature-view__group">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Preço de Custo</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ product?.expense | currency:'BRL' }}" class="feature-view__value">
+                                    {{ product?.expense | currency:'BRL' }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Preço de Venda</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ product?.sale | currency:'BRL' }}" class="feature-view__value">
+                                    {{ product?.sale | currency:'BRL' }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Resultado</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ resultValue | currency:'BRL' }}" class="feature-view__value">
+                                    {{ resultValue | currency:'BRL' }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion -->
+        <!-- #region Coluna 2 -->
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="feature-view__title">Prazos</span>
+                </div>
+            </div>
+            <div class="row feature-view__group">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Data de Fabricação</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ product?.manufacture | date:'short' }}" class="feature-view__value">
+                                    {{ product?.manufacture | date:'shortDate':'-03:00' }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Data de Validade</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ product?.expiration | date:'short' }}" class="feature-view__value">
+                                    {{ product?.expiration | date:'shortDate':'-03:00' }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label">Período de Validade</span>
+                            </div>
+                            <div class="truncate">
+                                <span title="{{ expirateDate }}" class="feature-view__value">
+                                    {{ expirateDate }} dias
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion -->
+    </div>
+</div>
+<div class="feature-view-tab__footer">
+    <button class="ndd-ng-button ndd-ng-button--primary" (click)="onEdit()">Editar</button>
+    <button class="ndd-ng-button ndd-ng-button--cancel" (click)="redirect()">Voltar</button>
+</div>
+<div class="ndd-ng-spinner__spinner" *ngIf="isLoading"></div>
+<div class="ndd-ng-spinner__color" *ngIf="isLoading"></div>

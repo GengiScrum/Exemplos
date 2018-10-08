@@ -1,0 +1,52 @@
+<div class="feature-view-tab">
+    <div class="feature-view-tab__content">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="feature-view__title">Dados Cadastrais</span>
+                    </div>
+                </div>
+                <form [formGroup]="form">
+                    <div class="row feature-view__group">
+                        <div class="col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label" [class.form__color-red]="form.get('customer').hasError('required') && form.get('customer').touched">Comprador *</span>
+                            </div>
+                            <input formControlName="customer" class="form__input" type="text" [class.form__input__border-red]="form.get('customer').hasError('required') && form.get('customer').touched">
+                            <div *ngIf="form.get('customer').hasError('required') && form.get('customer').touched">
+                                <span class="feature-view__label form__color-red">Campo requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label" [class.form__color-red]="form.get('product').hasError('required') && form.get('product').touched">Produto *</span>
+                            </div>
+                            <kendo-dropdownlist [data]="data" formControlName="product" [textField]="'name'" [valueField]="'name'" [filterable]="true" (filterChange)="onAutoCompleteChange($event)"></kendo-dropdownlist>
+                            <div *ngIf="form.get('product').hasError('required') && form.get('product').touched">
+                                <span class="feature-view__label form__color-red">Campo requerido</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row feature-view__group">
+                        <div class="col-sm-6 feature-view__body">
+                            <div>
+                                <span class="feature-view__label" [class.form__color-red]="form.get('quantity').hasError('required') && form.get('quantity').touched">Quantidade *</span>
+                            </div>
+                            <input formControlName="quantity" class="form__input" type="text" [class.form__input__border-red]="form.get('quantity').hasError('required') && form.get('quantity').touched">
+                            <div *ngIf="form.get('quantity').hasError('required') && form.get('quantity').touched">
+                                <span class="feature-view__label form__color-red">Campo requerido</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="feature-view-tab__footer">
+    <button class="ndd-ng-button ndd-ng-button--primary" (click)="onSave()">Salvar</button>
+    <button class="ndd-ng-button ndd-ng-button--cancel" (click)="redirect()">Voltar</button>
+</div>
+<div class="ndd-ng-spinner__spinner" *ngIf="isLoading"></div>
+<div class="ndd-ng-spinner__color" *ngIf="isLoading"></div>

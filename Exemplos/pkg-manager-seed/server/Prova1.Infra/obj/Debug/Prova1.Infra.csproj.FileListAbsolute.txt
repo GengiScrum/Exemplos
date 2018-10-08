@@ -1,0 +1,12 @@
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\Prova1.Infra.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\Prova1.Infra.pdb
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\obj\Debug\Prova1.Infra.csprojAssemblyReference.cache
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\obj\Debug\Prova1.Infra.csproj.CoreCompileInputs.cache
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\obj\Debug\Prova1.Infra.csproj.CopyComplete
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\obj\Debug\Prova1.Infra.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Infra\obj\Debug\Prova1.Infra.pdb

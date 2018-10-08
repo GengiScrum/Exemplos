@@ -1,0 +1,87 @@
+<div class="feature-view">
+    <ndd-ng-titlebar titlebarIcon="ndd-font ndd-font-cardboard-box" titlebarTitle="Cadastrar Produto" [titlebarRouterToReturnOnClose]="returnRoute"></ndd-ng-titlebar>
+    <ndd-ng-tabsbar>
+        <ndd-ng-tab tabId="ndd-ng-tab-produc-info" [tabRoute]="'./'" tabTitle="Dados Cadastrais"></ndd-ng-tab>
+    </ndd-ng-tabsbar>
+    <div class="feature-view-tab">
+        <div class="feature-view-tab__content">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <span class="feature-view__title">Dados Cadastrais</span>
+                        </div>
+                    </div>
+                    <form [formGroup]="form">
+                        <div class="row feature-view__group">
+                            <div class="col-sm-6 feature-view__body">
+                                <div>
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('name').hasError('required') && form.get('name').touched">Nome *</span>
+                                </div>
+                                <input formControlName="name" class="form__input" type="text" [class.form__input__border-red]="form.get('name').hasError('required') && form.get('name').touched">
+                                <div *ngIf="form.get('name').hasError('required') && form.get('name').touched">
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('name').hasError('required') && form.get('name').touched">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 feature-view__body">
+                                <div>
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('sale').hasError('required') && form.get('sale').touched">Preço de Venda *</span>
+                                </div>
+                                <input formControlName="sale" class="form__input" type="number" [class.form__input__border-red]="form.get('sale').hasError('required') && form.get('sale').touched">
+                                <div *ngIf="form.get('sale').hasError('required') && form.get('sale').touched">
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('sale').hasError('required') && form.get('sale').touched">Campo obrigatório</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row feature-view__group">
+                            <div class="col-sm-6 feature-view__body">
+                                <div>
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('expense').hasError('required') && form.get('expense').touched">Custo de Fabricação *</span>
+                                </div>
+                                <input formControlName="expense" class="form__input" type="number" [class.form__input__border-red]="form.get('expense').hasError('required') && form.get('expense').touched">
+                                <div *ngIf="form.get('expense').hasError('required') && form.get('expense').touched">
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('expense').hasError('required') && form.get('expense').touched">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 feature-view__body">
+                                <div>
+                                    <span class="feature-view__label">Disponibilidade</span>
+                                </div>
+                                <div>
+                                    <ui-switch formControlName="isAvailable" (change)="isAvailable()" color="brown" size="small"></ui-switch>
+                                    <span class="feature-view__label">{{ productAvailable }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row feature-view__group">
+                            <div class="col-sm-6 feature-view__body">
+                                <div>
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('manufacture').hasError('required') && form.get('manufacture').touched">Data de Fabricação *</span>
+                                </div>
+                                <input formControlName="manufacture" class="form__input" type="date" [class.form__input__border-red]="form.get('manufacture').hasError('required') && form.get('manufacture').touched">
+                                <div *ngIf="form.get('manufacture').hasError('required') && form.get('manufacture').touched">
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('manufacture').hasError('required') && form.get('manufacture').touched">Campo obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 feature-view__body">
+                                <div>
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('expiration').hasError('required') && form.get('expiration').touched">Data de Validade *</span>
+                                </div>
+                                <input formControlName="expiration" class="form__input" type="date" [class.form__input__border-red]="form.get('expiration').hasError('required') && form.get('expiration').touched">
+                                <div *ngIf="form.get('expiration').hasError('required') && form.get('expiration').touched">
+                                    <span class="feature-view__label" [class.form__color-red]="form.get('expiration').hasError('required') && form.get('expiration').touched">Campo obrigatório</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="feature-view-tab__footer">
+    <button class="ndd-ng-button ndd-ng-button--primary" (click)="onSave()">Salvar</button>
+    <button class="ndd-ng-button ndd-ng-button--cancel" (click)="redirect()">Voltar</button>
+</div>
+<div class="ndd-ng-spinner__spinner" *ngIf="isLoading"></div>
+<div class="ndd-ng-spinner__color" *ngIf="isLoading"></div>

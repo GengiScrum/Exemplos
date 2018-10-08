@@ -1,0 +1,9 @@
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\bin\Debug\Prova1.Domain.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\bin\Debug\Prova1.Domain.pdb
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\bin\Debug\Prova1.Infra.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\bin\Debug\Prova1.Infra.pdb
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\obj\Debug\Prova1.Domain.csprojAssemblyReference.cache
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\obj\Debug\Prova1.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\obj\Debug\Prova1.Domain.csproj.CopyComplete
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\obj\Debug\Prova1.Domain.dll
+C:\Users\ndduser\Desktop\Exemplos\pkg-manager-seed\server\Prova1.Domain\obj\Debug\Prova1.Domain.pdb

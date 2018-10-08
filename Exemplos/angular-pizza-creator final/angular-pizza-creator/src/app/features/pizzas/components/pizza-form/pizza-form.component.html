@@ -1,0 +1,92 @@
+<form (ngSubmit)="onSubmit($event)" [formGroup]="formModel">
+  <h2>Enter your details</h2>
+  <div class="section" formGroupName="details">
+    <div class="input">
+      <label>
+        Name
+        <span class="required">*</span>
+        <span *ngIf="formModel.get('details').get('name').hasError('required') && formModel.get('details').get('name').touched" class="error">
+          Field is required
+        </span>
+      </label>
+      <input formControlName="name" type="text" placeholder="Enter your name">
+    </div>
+    <div class="input">
+      <label>
+        Email
+        <span class="required">*</span>
+        <span *ngIf="formModel.get('details').get('email').errors && formModel.get('details').get('email').touched" class="error">
+          Field is required
+        </span>
+      </label>
+      <input formControlName="email" type="email" placeholder="Enter your email">
+    </div>
+    <div class="input">
+      <label>
+        Confirm
+        <span class="required">*</span>
+        <span *ngIf="formModel.get('details').get('confirm').errors && formModel.get('details').get('confirm').touched" class="error">
+          <span *ngIf="formModel.get('details').get('confirm').hasError('required')">
+            Field is required
+          </span>
+        </span>
+        <span class="error" *ngIf="!formModel.get('details').get('confirm').hasError('required') && formModel.get('details').touched && formModel.get('details').hasError('nomatch')">
+          Emails must match
+        </span>
+      </label>
+      <input formControlName="confirm" type="email" placeholder="Confirm your email">
+    </div>
+  </div>
+  <div class="section" formGroupName="details">
+    <div class="input">
+      <label>
+        Address
+        <span class="required">*</span>
+        <span *ngIf="formModel.get('details').get('address').errors && formModel.get('details').get('address').touched" class="error">
+          <span *ngIf="formModel.get('details').get('address').hasError('required')">
+            Field is required
+          </span>
+          <span *ngIf="formModel.get('details').get('address').hasError('minlength')">
+            Min of 3 characters
+          </span>
+        </span>
+      </label>
+      <input formControlName="address" type="text" placeholder="Enter your address">
+    </div>
+    <div class="input">
+      <label>
+        Postcode
+        <span class="required">*</span>
+        <span *ngIf="formModel.get('details').get('postcode').errors && formModel.get('details').get('postcode').touched" class="error">
+          <span *ngIf="formModel.get('details').get('postcode').hasError('required')">
+            Field is required
+          </span>
+          <span *ngIf="formModel.get('details').get('postcode').hasError('minlength')">
+            Min of 3 characters
+          </span>
+        </span>
+      </label>
+      <input formControlName="postcode" type="text" placeholder="Enter your postcode">
+    </div>
+    <div class="input">
+      <label>
+        Contact Number
+        <span class="required">*</span>
+        <span *ngIf="formModel.get('details').get('phone').errors && formModel.get('details').get('phone').touched" class="error">
+          Field is required
+        </span>
+      </label>
+      <input formControlName="phone" type="text" placeholder="Enter your telephone number">
+    </div>
+  </div>
+
+  <pizza-creator [pizzas]="formModel.get('pizzas')" (add)="onAddPizza($event)" (remove)="onRemovePizza($event)" (toggle)="onToggle($event)">
+  </pizza-creator>
+
+  <pizza-summary [formModel]="formModel" [prices]="prices" [total]="total">
+  </pizza-summary>
+
+  <button type="submit" class="pizza-form__button" [disabled]="formModel.invalid">
+    Place order
+  </button>
+</form>

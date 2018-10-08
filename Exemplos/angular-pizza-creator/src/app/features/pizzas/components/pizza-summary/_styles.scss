@@ -1,0 +1,31 @@
+.pizza-summary {
+  &__pizza {
+      border-top: 10px solid white;
+      padding-bottom: 10px;
+      border-bottom: 1px solid gray;
+      
+      top: 20px;
+      bottom: 20px;
+    h4 {
+      font-size: 22px;
+      font-weight: 300;
+      margin: 0;
+      position: relative;
+    }
+    &__topping {
+      font-size: 80%;
+    }
+    &__price {
+      font-size: 80%;
+      float: right;
+      text-align: right;
+      position: relative;
+      &__total {
+        float: right;
+      }
+    }
+    &__icon {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="pizza-summary">
+  <span class="form__title">
+    Order Summary
+  </span>
+  <div class="pizza-summary__pizza" *ngFor="let pizza of pizzas.controls">
+    <h4>{{ pizza.value.size | titlecase }} Pizza
+      <span class="pizza-summary__pizza__price__total">$ {{ getPizzaSizePrice(pizza.value.size).base }}</span>
+    </h4>
+    <div *ngFor="let topping of pizza.value.toppings">
+      <i class="pizza-summary__pizza__icon fa fa-plus"></i>
+      <span class="pizza-summary__pizza__topping"> {{ topping | titlecase }}</span>
+      <span class="pizza-summary__pizza__price">$ {{ getPizzaSizePrice(pizza.value.size).toppings }}</span>
+    </div>
+  </div>
+  <div>
+    <span class="pizza-summary__pizza__price__total">Total: $ {{ total }}</span>
+  </div>
+</div>

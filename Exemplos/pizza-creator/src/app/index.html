@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./shared/components/forms/forms.css">
+    <title>Pizza Creator App</title>
+</head>
+
+<body class="pizza-creator">
+    <section class="pizza-creator__logo">
+        <img class="pizza-creator__logo__image" src="./shared/images/pizza.svg" alt="Pizza Logo" />
+    </section>
+    <section class="pizza-creator__content">
+        <form class="form form--full" action="javascript:void(0)" novalidate>
+            <fieldset class="form__fieldset">
+                <legend class="form__fieldset__legend">Customer Information</legend>
+                <div class="form__group">
+                    <label class="form__label" for="name">
+                        <span>Name</span>
+                        <span id="errorRequired" class="form__label__error">Field is required</span>
+                    </label>
+                    <input class="form__input" id="name" type="text">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="email">
+                        <span>Email</span>
+                        <span id="errorRequired" class="form__label__error">Field is required</span>
+                    </label>
+                    <input class="form__input" id="email" type="email">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="confirmEmail">
+                        <span>Confirm Email</span>
+                        <span id="errorRequired" class="form__label__error">Field is required</span>
+                        <span id="emailMatch" class="form__label__error">Email must match</span>
+                    </label>
+                    <input class="form__input" id="confirmEmail" type="email">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="address">
+                        <span>Address</span>
+                        <span id="errorRequired" class="form__label__error">Field is required</span>
+                    </label>
+                    <input class="form__input" id="address" type="text">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="postalCode">
+                        <span>Postal Code</span>
+                        <span id="errorRequired" class="form__label__error">Field is required</span>
+                    </label>
+                    <input class="form__input" id="postalCode" type="text">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="contactNumber">
+                        <span>Contact Number</span>
+                        <span id="errorRequired" class="form__label__error">Field is required</span>
+                    </label>
+                    <input class="form__input" id="contactNumber" type="text">
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__fieldset__legend">Pizza Size</legend>
+                <div class="form__group form__group--small">
+                    <input id="big" type="radio" name="size" value="big" required/>
+                    <label class="form__label form__label--inline" for="big">Large</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="medium" type="radio" name="size" value="medium" required/>
+                    <label class="form__label form__label--inline" for="medium">Medium</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="small" type="radio" checked name="size" value="small" required/>
+                    <label class="form__label form__label--inline" for="small">Small</label>
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__fieldset__legend">Toppings</legend>
+                <div class="form__group form__group--small">
+                    <input id="bacon" type="checkbox" name="bacon" value="bacon">
+                    <label class="form__label form__label--inline form__label--clickable" for="bacon">Bacon</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="tomato" type="checkbox" name="tomato" value="tomato">
+                    <label class="form__label form__label--inline form__label--clickable" for="tomato">Tomato</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="pepperoni" type="checkbox" name="pepperoni" value="pepperoni">
+                    <label class="form__label form__label--inline form__label--clickable" for="pepperoni">Pepperoni</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="onion" type="checkbox" name="onion" value="onion">
+                    <label class="form__label form__label--inline form__label--clickable" for="onion">Onion</label>
+                </div>
+                <br />
+                <br />
+                <div class="form__group form__group--small">
+                    <input id="chili" type="checkbox" name="chili" value="chili">
+                    <label class="form__label form__label--inline form__label--clickable" for="chili">Chili</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="olive" type="checkbox" name="olive" value="olive">
+                    <label class="form__label form__label--inline form__label--clickable" for="olive">Olive</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="sweetcorn" type="checkbox" name="sweetcorn" value="sweetcorn">
+                    <label class="form__label form__label--inline form__label--clickable" for="sweetcorn">Sweetcorn</label>
+                </div>
+                <div class="form__group form__group--small">
+                    <input id="pepper" type="checkbox" name="pepper" value="pepper">
+                    <label class="form__label form__label--inline form__label--clickable" for="pepper">Pepper</label>
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__fieldset__legend">Order Summary</legend>
+                <div id="summary"></div>
+                <script id="itemSummaryDescriptionTemplate" type="text/template">
+                    <div class="form__group form__group--medium">
+                        <span id="description" class="form__text"></span>
+                    </div>
+                </script>
+                <script id="itemSummaryValueTemplate" type="text/template">
+                    <div class="form__group form__group--medium form__group--text-right">
+                        <span id="value" class="form__text"></span>
+                    </div>
+                </script>
+            </fieldset>
+            <br/>
+            <div class="form__group form__group--fixed-bottom">
+                <button class="form__button" id="btnPlaceOrder" type="submit">Place Order</button>
+            </div>
+        </form>
+    </section>
+    <script type="text/javascript" src="./features/customer/customer.model.js"></script>
+    <script type="text/javascript" src="./features/pizza/shared/pizza.model.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./features/customer/customer-form/customer-form.js"></script>
+    <script type="text/javascript" src="./features/pizza/pizza-summary/pizza-summary.js"></script>
+    <script type="text/javascript" src="./features/pizza/pizza-create/pizza-create.js"></script>
+</body>
+
+</html>
